@@ -130,7 +130,7 @@ main {
 }
 
 .header__inner {
-  min-height: 80px;
+  min-height: 118px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -168,7 +168,7 @@ main {
 
 .header__brand-mark {
   width: auto;
-  height: 36px;
+  height: 92px;
   object-fit: contain;
 }
 
@@ -520,7 +520,7 @@ main {
 
 .footer__brand-mark {
   width: auto;
-  height: 34px;
+  height: 92px;
   object-fit: contain;
 }
 
@@ -1006,7 +1006,7 @@ main {
   }
 
   .header__inner {
-    min-height: 72px;
+    min-height: 96px;
     position: relative;
     z-index: 41;
   }
@@ -1071,11 +1071,11 @@ main {
   }
 
   .header__mobile {
-    padding-top: 80px;
+    padding-top: 104px;
   }
 
   .header__mobile-inner {
-    min-height: calc(100dvh - 96px);
+    min-height: calc(100dvh - 120px);
   }
 
   .downloads-stack--uniform .download-card {
@@ -1100,11 +1100,11 @@ main {
   }
 
   .header__brand-mark {
-    height: 30px;
+    height: 64px;
   }
 
   .footer__brand-mark {
-    height: 28px;
+    height: 72px;
   }
 
   .media-band {

@@ -80,7 +80,7 @@ export function Header() {
                         width={siteMedia.branding.wordmark.width}
                         height={siteMedia.branding.wordmark.height}
                         className="header__brand-mark"
-                        priority
+                        loading="eager"
                     />
                     <span className="sr-only">SellXSell</span>
                 </Link>

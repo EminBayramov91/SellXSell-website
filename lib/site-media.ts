@@ -1,10 +1,10 @@
 export const siteMedia = {
     branding: {
         wordmark: {
-            src: "/media/branding/logo-wordmark.png",
-            alt: "SellXSell wordmark",
-            width: 1420,
-            height: 420,
+            src: "/media/branding/logo.png",
+            alt: "SellXSell logo",
+            width: 1536,
+            height: 1024,
         },
     },
     about: {
