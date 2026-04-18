@@ -10,10 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "SellXSell",
-    template: "%s | SellXSell",
-  },
+  title: "SellXSell",
   description: "Inspection-driven revenue operating system.",
 };
 

@@ -1,0 +1,55 @@
+export const siteMedia = {
+    branding: {
+        wordmark: {
+            src: "/media/branding/logo-wordmark.png",
+            alt: "SellXSell wordmark",
+            width: 1420,
+            height: 420,
+        },
+    },
+    about: {
+        deskHero: {
+            src: "/media/about/desk-hero.jpg",
+            alt:
+                "Shelley Dunagan seated at her desk in a blue blazer with the SellXSell sign behind her.",
+        },
+        speakingAuthority: {
+            src: "/media/about/speaking-authority.jpg",
+            alt: "Shelley Dunagan speaking into a microphone to a live audience.",
+        },
+    },
+    home: {
+        trustStrip: {
+            src: "/media/home/trust-strip.png",
+            alt: "Citizens, EBSCO, FIS, Comcast, Twilio, and Sinch logos.",
+            width: 1440,
+            height: 121,
+        },
+    },
+    approach: {
+        boardroom: {
+            src: "/media/approach/boardroom.jpg",
+            alt:
+                "Shelley Dunagan seated at the center of a boardroom beneath a screen titled Why Your Forecast Is Wrong.",
+        },
+        dinnerTable: {
+            src: "/media/approach/dinner-table.jpg",
+            alt:
+                "Shelley Dunagan speaking on stage in front of the Revenue Dinner Table visual.",
+        },
+    },
+    advisory: {
+        executivePanel: {
+            src: "/media/advisory/executive-panel.jpg",
+            alt:
+                "Shelley Dunagan seated on an executive advisory panel in front of a large screen.",
+        },
+    },
+    speaking: {
+        reel: {
+            src: "/media/speaking/speaker-reel.mp4",
+            poster: "/media/speaking/speaker-reel-poster.jpg",
+            title: "Speaker reel",
+        },
+    },
+} as const;

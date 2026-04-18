@@ -1,21 +1,42 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { bookDiagnosticCtaHref } from "@/lib/public-site-config";
+import { runDiagnosticCtaHref } from "@/lib/public-site-config";
+import { siteMedia } from "@/lib/site-media";
+import { siteRoutes } from "@/lib/site-routes";
 import { ButtonLink } from "./button-link";
 
 const navItems = [
-    { label: "About", href: "/about" },
-    { label: "Approach", href: "/approach" },
-    { label: "Advisory", href: "/advisory" },
-    { label: "Speaking", href: "/speaking" },
-    { label: "Downloads", href: "/downloads" },
+    { label: "About", href: siteRoutes.about, matchers: [siteRoutes.about] },
+    {
+        label: "MEDDIC",
+        href: siteRoutes.meddic,
+        matchers: [siteRoutes.meddic, "/approach"],
+    },
+    {
+        label: "Services",
+        href: siteRoutes.services,
+        matchers: [siteRoutes.services, "/advisory"],
+    },
+    {
+        label: "Speaking",
+        href: siteRoutes.speaking,
+        matchers: [siteRoutes.speaking, "/speaking"],
+    },
+    {
+        label: "Resources",
+        href: siteRoutes.resources,
+        matchers: [siteRoutes.resources, "/downloads"],
+    },
 ];
 
-function isActive(pathname: string, href: string) {
-    return pathname === href || pathname.startsWith(`${href}/`);
+function isActive(pathname: string, matchers: string[]) {
+    return matchers.some(
+        (matcher) => pathname === matcher || pathname.startsWith(`${matcher}/`),
+    );
 }
 
 export function Header() {
@@ -53,13 +74,20 @@ export function Header() {
         <header className="header">
             <div className="shell header__inner">
                 <Link href="/" className="header__brand" onClick={closeMenu}>
-                    <span className="header__badge">SX</span>
-                    <span>SellXSell</span>
+                    <Image
+                        src={siteMedia.branding.wordmark.src}
+                        alt={siteMedia.branding.wordmark.alt}
+                        width={siteMedia.branding.wordmark.width}
+                        height={siteMedia.branding.wordmark.height}
+                        className="header__brand-mark"
+                        priority
+                    />
+                    <span className="sr-only">SellXSell</span>
                 </Link>
 
                 <nav className="header__nav" aria-label="Primary">
                     {navItems.map((item) => {
-                        const active = isActive(pathname, item.href);
+                        const active = isActive(pathname, item.matchers);
 
                         return (
                             <Link
@@ -76,7 +104,7 @@ export function Header() {
 
                 <div className="header__actions">
                     <div className="header__desktop-cta">
-                        <ButtonLink href={bookDiagnosticCtaHref}>Run Diagnostic</ButtonLink>
+                        <ButtonLink href={runDiagnosticCtaHref}>Run Diagnostic</ButtonLink>
                     </div>
 
                     <button
@@ -100,7 +128,7 @@ export function Header() {
                 <div className="shell header__mobile-inner">
                     <nav className="header__mobile-nav" aria-label="Mobile Primary">
                         {navItems.map((item) => {
-                            const active = isActive(pathname, item.href);
+                            const active = isActive(pathname, item.matchers);
 
                             return (
                                 <Link
@@ -116,7 +144,7 @@ export function Header() {
                     </nav>
 
                     <div className="header__mobile-actions">
-                        <ButtonLink href={bookDiagnosticCtaHref} fullWidth onClick={closeMenu}>
+                        <ButtonLink href={runDiagnosticCtaHref} fullWidth onClick={closeMenu}>
                             Run Diagnostic
                         </ButtonLink>
                     </div>

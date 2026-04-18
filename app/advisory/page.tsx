@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageSections } from "@/components/page-sections";
 import { advisorySections } from "@/lib/site-content";
+import { siteMedia } from "@/lib/site-media";
 
 export const metadata: Metadata = {
     title: "Advisory",
@@ -8,5 +10,24 @@ export const metadata: Metadata = {
 };
 
 export default function AdvisoryPage() {
-    return <PageSections sections={advisorySections} />;
+    return (
+        <>
+            <section className="media-band">
+                <div className="media-band__bleed">
+                    <div className="media-band__frame media-band__frame--standard">
+                        <Image
+                            src={siteMedia.advisory.executivePanel.src}
+                            alt={siteMedia.advisory.executivePanel.alt}
+                            fill
+                            priority
+                            sizes="100vw"
+                            className="media-band__image"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <PageSections sections={advisorySections} />
+        </>
+    );
 }

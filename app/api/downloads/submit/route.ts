@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDownloadAsset } from "@/lib/site-content";
 import { getAssetMailchimpTag, mailchimpConfig } from "@/lib/server-config";
+import { siteRoutes } from "@/lib/site-routes";
 
 function getFormValue(formData: FormData, field: string) {
     const value = formData.get(field);
@@ -14,7 +15,7 @@ export async function POST(request: Request) {
     const currentAsset = getDownloadAsset(asset);
 
     if (!currentAsset) {
-        return NextResponse.redirect(new URL("/downloads", request.url), 303);
+        return NextResponse.redirect(new URL(siteRoutes.resources, request.url), 303);
     }
 
     const redirectUrl = new URL("/downloads/thank-you", request.url);
@@ -46,6 +47,10 @@ export async function POST(request: Request) {
 
     if (mailchimpConfig.sourceField && mailchimpConfig.sourceValue) {
         payload.set(mailchimpConfig.sourceField, mailchimpConfig.sourceValue);
+    }
+
+    if (mailchimpConfig.honeypotField) {
+        payload.set(mailchimpConfig.honeypotField, "");
     }
 
     const assetTag = getAssetMailchimpTag(currentAsset.slug);

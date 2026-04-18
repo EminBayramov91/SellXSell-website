@@ -1,6 +1,6 @@
 import {
     advisoryCtaHref,
-    bookDiagnosticCtaHref,
+    runDiagnosticCtaHref,
     speakingCtaHref,
 } from "@/lib/public-site-config";
 
@@ -36,7 +36,7 @@ export const homeSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: "/diagnostic",
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
         ],
@@ -109,7 +109,7 @@ export const homeSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: "/diagnostic",
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
         ],
@@ -146,7 +146,7 @@ export const homeSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: "/diagnostic",
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
         ],
@@ -168,7 +168,7 @@ export const aboutSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: "/diagnostic",
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
         ],
@@ -225,7 +225,7 @@ export const aboutSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: "/diagnostic",
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
         ],
@@ -247,7 +247,7 @@ export const approachSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: "/diagnostic",
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
         ],
@@ -276,7 +276,7 @@ export const approachSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: "/diagnostic",
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
         ],
@@ -322,7 +322,7 @@ export const approachSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: "/diagnostic",
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
         ],
@@ -349,7 +349,7 @@ export const advisorySections: PageSection[] = [
             },
             {
                 label: "Start with the Diagnostic",
-                href: "/diagnostic",
+                href: runDiagnosticCtaHref,
                 variant: "secondary",
             },
         ],
@@ -414,7 +414,7 @@ export const advisorySections: PageSection[] = [
             },
             {
                 label: "Start with the Diagnostic",
-                href: "/diagnostic",
+                href: runDiagnosticCtaHref,
                 variant: "secondary",
             },
         ],
@@ -436,7 +436,7 @@ export const advisorySections: PageSection[] = [
             },
             {
                 label: "Run the Revenue Diagnostic",
-                href: "/diagnostic",
+                href: runDiagnosticCtaHref,
                 variant: "secondary",
             },
         ],
@@ -521,7 +521,7 @@ export const diagnosticSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: bookDiagnosticCtaHref,
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
         ],
@@ -540,7 +540,7 @@ export const diagnosticSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: bookDiagnosticCtaHref,
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
         ],
@@ -596,7 +596,7 @@ export const diagnosticSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: bookDiagnosticCtaHref,
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
         ],
@@ -613,7 +613,7 @@ export const diagnosticSections: PageSection[] = [
         ctas: [
             {
                 label: "Run the Revenue Diagnostic",
-                href: bookDiagnosticCtaHref,
+                href: runDiagnosticCtaHref,
                 variant: "primary",
             },
             {

@@ -46,11 +46,12 @@ Copy `.env.example` to `.env.local` and fill in the client values when they arri
 
 - `NEXT_PUBLIC_SELLXSELL_ADVISORY_URL`
 - `NEXT_PUBLIC_SELLXSELL_SPEAKING_URL`
+- `NEXT_PUBLIC_SELLXSELL_RUN_DIAGNOSTIC_URL`
 - `NEXT_PUBLIC_SELLXSELL_BOOK_DIAGNOSTIC_URL`
 - `NEXT_PUBLIC_SELLXSELL_PAID_DIAGNOSTIC_URL`
 
-These values control the live CTA destinations for advisory, speaking, the thank-you page, and the header/footer diagnostic CTA.
-Right now advisory + book-diagnostic CTAs fall back to `https://calendly.com/sellxsellrev` until more specific URLs are provided.
+These values control the live CTA destinations for advisory, speaking, the diagnostic app, the thank-you page, and the header/footer CTA.
+Right now advisory + book-diagnostic CTAs fall back to `https://calendly.com/sellxsellrev`, while run-diagnostic CTAs fall back to `https://sell-x-sell.vercel.app/`.
 
 ### Mailchimp download gate
 
@@ -64,12 +65,14 @@ Right now advisory + book-diagnostic CTAs fall back to `https://calendly.com/sel
 - `SELLXSELL_MAILCHIMP_ASSET_LABEL_FIELD`
 - `SELLXSELL_MAILCHIMP_SOURCE_FIELD`
 - `SELLXSELL_MAILCHIMP_SOURCE_VALUE`
+- `SELLXSELL_MAILCHIMP_HONEYPOT_FIELD`
 - `SELLXSELL_MAILCHIMP_TAG_FIELD`
 - `SELLXSELL_MAILCHIMP_PLAYBOOK_TAG`
 - `SELLXSELL_MAILCHIMP_CHECKLIST_TAG`
 - `SELLXSELL_MAILCHIMP_SYSTEM_TAG`
 
-The gate form now posts to `/api/downloads/submit`, which is ready to forward submissions to Mailchimp once the final form action URL and field names are provided.
+The gate form posts to `/api/downloads/submit`, which now includes the Mailchimp action URL and honeypot field confirmed by the client's embed code.
+The embed code only confirms the subscribe endpoint and `EMAIL` field for sure, so any extra merge fields still remain configurable until the client confirms their exact Mailchimp setup.
 
 ### Delivery reference values
 
@@ -91,7 +94,7 @@ These are not surfaced in the UI yet, but they document the remaining handoff va
 
 ## Remaining Manual Setup
 
-- Final Mailchimp action URL and merge/tag field names
+- Final Mailchimp merge/tag field names for first name, last name, company, role, and asset tagging
 - Final file delivery URLs for each asset
 - Calendly booking URL
 - Stripe paid diagnostic URL
