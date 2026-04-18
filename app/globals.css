@@ -296,10 +296,11 @@ main {
 .header__mobile-inner {
   width: 100%;
   min-height: calc(100dvh - 104px);
-  padding: 12px 0 0;
+  padding: 12px 0 calc(24px + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
   gap: 18px;
+  overflow-y: auto;
   transform: translateY(18px) scale(0.98);
   opacity: 0;
   transition:
@@ -344,8 +345,12 @@ main {
 }
 
 .header__mobile-actions {
-  margin-top: auto;
+  margin-top: 4px;
   padding-top: 8px;
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent, rgba(2, 4, 10, 0.96) 28%);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .content-section {
