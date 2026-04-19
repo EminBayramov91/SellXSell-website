@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { ContentSection } from "@/components/content-section";
 import { TrustStrip } from "@/components/trust-strip";
+import { VideoFeature } from "@/components/video-feature";
 import { homeSections } from "@/lib/site-content";
+import { siteMedia } from "@/lib/site-media";
 import { siteRoutes } from "@/lib/site-routes";
 
 export const metadata: Metadata = {
@@ -35,6 +37,17 @@ export default function HomePage() {
 
     return (
         <>
+            <section className="media-band media-band--tight">
+                <div className="media-band__bleed">
+                    <VideoFeature
+                        src={siteMedia.home.heroVideo.src}
+                        poster={siteMedia.home.heroVideo.poster}
+                        title={siteMedia.home.heroVideo.title}
+                        bleed
+                    />
+                </div>
+            </section>
+
             {sections.map((section, index) => (
                 <div key={section.id}>
                     <ContentSection
@@ -43,7 +56,7 @@ export default function HomePage() {
                         altBackground={index !== 0 && index % 2 === 1}
                     />
 
-                    {index === 1 ? <TrustStrip /> : null}
+                    {index === 0 ? <TrustStrip /> : null}
                 </div>
             ))}
         </>

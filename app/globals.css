@@ -901,6 +901,10 @@ main {
   gap: 14px;
 }
 
+.video-feature--bleed {
+  gap: 0;
+}
+
 .video-feature__frame {
   position: relative;
   overflow: hidden;
@@ -911,6 +915,13 @@ main {
     #05070f;
   box-shadow: var(--shadow-card);
   aspect-ratio: 16 / 9;
+}
+
+.video-feature--bleed .video-feature__frame {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  box-shadow: none;
 }
 
 .video-feature__media {

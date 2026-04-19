@@ -19,6 +19,11 @@ export const siteMedia = {
         },
     },
     home: {
+        heroVideo: {
+            src: "/media/home/homepage-hero.mp4",
+            poster: "/media/home/homepage-hero-poster.jpg",
+            title: "CFO MEDDIC homepage hero video",
+        },
         trustStrip: {
             src: "/media/home/trust-strip.png",
             alt: "Citizens, EBSCO, FIS, Comcast, Twilio, and Sinch logos.",
