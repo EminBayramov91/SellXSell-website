@@ -24,6 +24,11 @@ export const siteMedia = {
             poster: "/media/home/homepage-hero-poster.jpg",
             title: "CFO MEDDIC homepage hero video",
         },
+        coreVideo: {
+            src: "/media/home/homepage-core.mp4",
+            poster: "/media/home/homepage-core-poster.jpg",
+            title: "SellXSell homepage core message video",
+        },
         trustStrip: {
             src: "/media/home/trust-strip.png",
             alt: "Citizens, EBSCO, FIS, Comcast, Twilio, and Sinch logos.",
@@ -55,6 +60,13 @@ export const siteMedia = {
             src: "/media/speaking/speaker-reel.mp4",
             poster: "/media/speaking/speaker-reel-poster.jpg",
             title: "Speaker reel",
+        },
+    },
+    diagnostic: {
+        landingVideo: {
+            src: "/media/diagnostic/landing-video.mp4",
+            poster: "/media/diagnostic/landing-video-poster.jpg",
+            title: "SellXSell diagnostic landing page video",
         },
     },
 } as const;

@@ -7,6 +7,9 @@ type DownloadAssetPageProps = {
     params: Promise<{
         asset: string;
     }>;
+    searchParams: Promise<{
+        status?: string;
+    }>;
 };
 
 export function generateStaticParams() {
@@ -35,8 +38,10 @@ export async function generateMetadata({
 
 export default async function DownloadAssetPage({
     params,
+    searchParams,
 }: DownloadAssetPageProps) {
     const { asset } = await params;
+    const { status } = await searchParams;
     const currentAsset = getDownloadAsset(asset);
 
     if (!currentAsset) {
@@ -52,6 +57,12 @@ export default async function DownloadAssetPage({
                     <p className="gate-text">
                         Enter your details below to continue to the next step.
                     </p>
+
+                    {status === "error" ? (
+                        <p className="gate-error">
+                            We couldn&apos;t confirm your request just now. Please try again.
+                        </p>
+                    ) : null}
 
                     <form
                         className="gate-form"

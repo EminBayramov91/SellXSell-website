@@ -10,14 +10,14 @@ export const mailchimpConfig = {
     actionUrl:
         readServerEnv("SELLXSELL_MAILCHIMP_FORM_ACTION") ??
         "https://sellxsell.us10.list-manage.com/subscribe/post?u=c3642a6a72a97239c0331b1ff&id=84a4455050&f_id=000e49e3f0",
-    emailField: readServerEnv("SELLXSELL_MAILCHIMP_EMAIL_FIELD") ?? "EMAIL",
+    emailField: readServerEnv("SELLXSELL_MAILCHIMP_EMAIL_FIELD") ?? "MERGE0",
     firstNameField:
-        readServerEnv("SELLXSELL_MAILCHIMP_FIRST_NAME_FIELD") ?? "FNAME",
+        readServerEnv("SELLXSELL_MAILCHIMP_FIRST_NAME_FIELD") ?? "MERGE1",
     lastNameField:
-        readServerEnv("SELLXSELL_MAILCHIMP_LAST_NAME_FIELD") ?? "LNAME",
-    companyField: readServerEnv("SELLXSELL_MAILCHIMP_COMPANY_FIELD") ?? "COMPANY",
-    roleField: readServerEnv("SELLXSELL_MAILCHIMP_ROLE_FIELD") ?? "ROLE",
-    assetField: readServerEnv("SELLXSELL_MAILCHIMP_ASSET_FIELD") ?? "ASSET",
+        readServerEnv("SELLXSELL_MAILCHIMP_LAST_NAME_FIELD") ?? "MERGE2",
+    companyField: readServerEnv("SELLXSELL_MAILCHIMP_COMPANY_FIELD"),
+    roleField: readServerEnv("SELLXSELL_MAILCHIMP_ROLE_FIELD"),
+    assetField: readServerEnv("SELLXSELL_MAILCHIMP_ASSET_FIELD"),
     assetLabelField: readServerEnv("SELLXSELL_MAILCHIMP_ASSET_LABEL_FIELD"),
     sourceField: readServerEnv("SELLXSELL_MAILCHIMP_SOURCE_FIELD"),
     sourceValue:

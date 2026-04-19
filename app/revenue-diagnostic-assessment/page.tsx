@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/button-link";
+import { VideoFeature } from "@/components/video-feature";
 import {
     bookDiagnosticCtaHref,
     diagnosticAppEmbedHref,
 } from "@/lib/public-site-config";
+import { siteMedia } from "@/lib/site-media";
 import styles from "./page.module.css";
 
 const whatThisDoes = [
@@ -39,6 +41,17 @@ export default function RevenueDiagnosticAssessmentPage() {
                             <ButtonLink href="#diagnostic-app">Start Diagnostic</ButtonLink>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className="media-band media-band--tight">
+                <div className="media-band__bleed">
+                    <VideoFeature
+                        src={siteMedia.diagnostic.landingVideo.src}
+                        poster={siteMedia.diagnostic.landingVideo.poster}
+                        title={siteMedia.diagnostic.landingVideo.title}
+                        bleed
+                    />
                 </div>
             </section>
 

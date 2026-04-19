@@ -82,11 +82,24 @@ export default function HomePage() {
             <section className="content-section content-section--alt">
                 <div className="shell shell--narrow">
                     <div className={styles.bridgeCopy}>
-                        <p className={styles.bridgeLine}>Feels close ≠ will close.</p>
                         <p className={styles.bridgeLine}>
-                            Pipeline ≠ coverage. Forecast ≠ reality.
+                            Feels close {"\u2260"} will close.
+                        </p>
+                        <p className={styles.bridgeLine}>
+                            Pipeline {"\u2260"} coverage. Forecast {"\u2260"} reality.
                         </p>
                     </div>
+                </div>
+            </section>
+
+            <section className="media-band media-band--tight">
+                <div className="media-band__bleed">
+                    <VideoFeature
+                        src={siteMedia.home.coreVideo.src}
+                        poster={siteMedia.home.coreVideo.poster}
+                        title={siteMedia.home.coreVideo.title}
+                        bleed
+                    />
                 </div>
             </section>
 

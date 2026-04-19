@@ -236,6 +236,17 @@ main {
   line-height: 1.6;
 }
 
+.gate-error {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 120, 120, 0.28);
+  border-radius: 12px;
+  background: rgba(120, 18, 24, 0.18);
+  color: #ffd2d6;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
 .gate-form {
   display: grid;
   gap: 14px;
