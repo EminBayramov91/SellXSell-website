@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import buttonStyles from "@/components/button.module.css";
 import { downloadAssets, getDownloadAsset } from "@/lib/site-content";
 
 type DownloadAssetPageProps = {
@@ -15,7 +16,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-                                           params,
+    params,
 }: DownloadAssetPageProps): Promise<Metadata> {
     const { asset } = await params;
     const currentAsset = getDownloadAsset(asset);
@@ -33,8 +34,8 @@ export async function generateMetadata({
 }
 
 export default async function DownloadAssetPage({
-                                                    params,
-                                                }: DownloadAssetPageProps) {
+    params,
+}: DownloadAssetPageProps) {
     const { asset } = await params;
     const currentAsset = getDownloadAsset(asset);
 
@@ -52,7 +53,11 @@ export default async function DownloadAssetPage({
                         Enter your details below to continue to the next step.
                     </p>
 
-                    <form className="gate-form" action="/api/downloads/submit" method="post">
+                    <form
+                        className="gate-form"
+                        action="/api/downloads/submit"
+                        method="post"
+                    >
                         <div className="input-grid">
                             <div className="input-field">
                                 <label htmlFor="firstName">First Name</label>
@@ -112,7 +117,10 @@ export default async function DownloadAssetPage({
 
                         <input type="hidden" name="asset" value={currentAsset.slug} />
 
-                        <button type="submit" className="button button--full">
+                        <button
+                            type="submit"
+                            className={`${buttonStyles.button} ${buttonStyles.full}`}
+                        >
                             Download Now
                         </button>
                     </form>

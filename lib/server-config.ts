@@ -43,6 +43,19 @@ export const downloadDeliveryConfig = {
     systemFileUrl: readServerEnv("SELLXSELL_SYSTEM_FILE_URL"),
 };
 
+export function getDownloadAssetFileHref(asset: string) {
+    switch (asset) {
+        case "playbook":
+            return downloadDeliveryConfig.playbookFileUrl ?? "/download-assets/playbook.pdf";
+        case "checklist":
+            return downloadDeliveryConfig.checklistFileUrl;
+        case "system":
+            return downloadDeliveryConfig.systemFileUrl;
+        default:
+            return undefined;
+    }
+}
+
 export function getAssetMailchimpTag(asset: string) {
     switch (asset) {
         case "playbook":

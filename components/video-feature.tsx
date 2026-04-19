@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
+import styles from "./video-feature.module.css";
 
 type VideoFeatureProps = {
     src: string;
@@ -61,12 +62,12 @@ export function VideoFeature({
     };
 
     return (
-        <div className={`video-feature${bleed ? " video-feature--bleed" : ""}`}>
-            <div className="video-feature__frame">
+        <div className={`${styles.root}${bleed ? ` ${styles.bleed}` : ""}`}>
+            <div className={styles.frame}>
                 {hasLoadedVideo ? (
                     <video
                         ref={videoRef}
-                        className="video-feature__media"
+                        className={styles.media}
                         poster={poster}
                         preload="metadata"
                         playsInline
@@ -85,23 +86,23 @@ export function VideoFeature({
                         fill
                         loading={bleed ? "eager" : undefined}
                         sizes="100vw"
-                        className="video-feature__media"
+                        className={styles.media}
                     />
                 )}
 
                 {!isPlaying ? (
                     <button
                         type="button"
-                        className="video-feature__play"
+                        className={styles.play}
                         aria-label={`Play ${title}`}
                         onClick={handlePlay}
                     >
-                        <span className="video-feature__play-icon" aria-hidden="true" />
+                        <span className={styles.icon} aria-hidden="true" />
                     </button>
                 ) : null}
             </div>
 
-            {caption ? <p className="video-feature__caption">{caption}</p> : null}
+            {caption ? <p className={styles.caption}>{caption}</p> : null}
         </div>
     );
 }

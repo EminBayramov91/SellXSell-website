@@ -1,0 +1,73 @@
+.button {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-strong) 100%);
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    var(--shadow-button),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition:
+    opacity 0.24s ease,
+    border-color 0.24s ease,
+    background-color 0.24s ease,
+    box-shadow 0.24s ease,
+    transform 0.24s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 1px 1px auto;
+  height: 48%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent);
+  pointer-events: none;
+}
+
+.button:hover {
+  opacity: 0.98;
+  transform: translateY(-2px);
+  box-shadow:
+    0 22px 38px rgba(123, 63, 228, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.button:focus-visible {
+  outline: 2px solid rgba(123, 63, 228, 0.55);
+  outline-offset: 2px;
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: var(--color-text);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.secondary:hover {
+  border-color: rgba(123, 63, 228, 0.36);
+  background: rgba(123, 63, 228, 0.1);
+}
+
+.full {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .button {
+    width: 100%;
+  }
+}

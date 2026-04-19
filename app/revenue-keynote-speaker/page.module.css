@@ -1,0 +1,98 @@
+.detailList {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.detailList li {
+  position: relative;
+  padding-left: 20px;
+  font-size: clamp(1rem, 0.92rem + 0.45vw, 1.12rem);
+  line-height: 1.65;
+}
+
+.detailList li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-strong) 100%);
+  box-shadow: 0 0 0 6px rgba(123, 63, 228, 0.1);
+  transform: translateY(-50%);
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.centered :global(.section-subtitle),
+.centered :global(.section-body) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centeredList {
+  justify-items: center;
+}
+
+.centeredList li {
+  max-width: 420px;
+}
+
+.formatsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.formatCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--color-border);
+  background:
+    linear-gradient(180deg, rgba(17, 21, 34, 0.96), rgba(8, 10, 18, 0.98)),
+    var(--color-card);
+  box-shadow: var(--shadow-card);
+  padding: 18px 20px;
+  font-size: 1rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.formatCard::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(123, 63, 228, 0.7), transparent);
+}
+
+.formatsSection {
+  padding-bottom: 96px;
+}
+
+.ctaRow {
+  width: min(100%, 360px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.ctaRow :global(.button) {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .formatsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

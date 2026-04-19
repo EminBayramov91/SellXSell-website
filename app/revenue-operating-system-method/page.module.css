@@ -1,0 +1,24 @@
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.center :global(.section-subtitle),
+.center :global(.section-body) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.note {
+  margin: 0 0 14px;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spaced {
+  margin-top: 32px;
+}

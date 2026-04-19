@@ -8,18 +8,19 @@ import { runDiagnosticCtaHref } from "@/lib/public-site-config";
 import { siteMedia } from "@/lib/site-media";
 import { siteRoutes } from "@/lib/site-routes";
 import { ButtonLink } from "./button-link";
+import styles from "./header.module.css";
 
 const navItems = [
     { label: "About", href: siteRoutes.about, matchers: [siteRoutes.about] },
     {
-        label: "MEDDIC",
+        label: "Approach",
         href: siteRoutes.meddic,
-        matchers: [siteRoutes.meddic, "/approach"],
+        matchers: [siteRoutes.meddic, "/approach", "/meddic-implementation"],
     },
     {
-        label: "Services",
+        label: "Advisory",
         href: siteRoutes.services,
-        matchers: [siteRoutes.services, "/advisory"],
+        matchers: [siteRoutes.services, "/advisory", "/revenue-consulting-services"],
     },
     {
         label: "Speaking",
@@ -27,9 +28,9 @@ const navItems = [
         matchers: [siteRoutes.speaking, "/speaking"],
     },
     {
-        label: "Resources",
+        label: "Downloads",
         href: siteRoutes.resources,
-        matchers: [siteRoutes.resources, "/downloads"],
+        matchers: [siteRoutes.resources, "/downloads", "/sales-playbooks-resources"],
     },
 ];
 
@@ -71,21 +72,21 @@ export function Header() {
     };
 
     return (
-        <header className="header">
-            <div className="shell header__inner">
-                <Link href="/" className="header__brand" onClick={closeMenu}>
+        <header className={styles.header}>
+            <div className={`shell ${styles.inner}`}>
+                <Link href="/" className={styles.brand} onClick={closeMenu}>
                     <Image
                         src={siteMedia.branding.wordmark.src}
                         alt={siteMedia.branding.wordmark.alt}
                         width={siteMedia.branding.wordmark.width}
                         height={siteMedia.branding.wordmark.height}
-                        className="header__brand-mark"
+                        className={styles.brandMark}
                         loading="eager"
                     />
                     <span className="sr-only">SellXSell</span>
                 </Link>
 
-                <nav className="header__nav" aria-label="Primary">
+                <nav className={styles.nav} aria-label="Primary">
                     {navItems.map((item) => {
                         const active = isActive(pathname, item.matchers);
 
@@ -93,7 +94,9 @@ export function Header() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className={`header__nav-link${active ? " is-active" : ""}`}
+                                className={`${styles.navLink}${
+                                    active ? ` ${styles.navLinkActive}` : ""
+                                }`}
                                 onClick={closeMenu}
                             >
                                 {item.label}
@@ -102,31 +105,33 @@ export function Header() {
                     })}
                 </nav>
 
-                <div className="header__actions">
-                    <div className="header__desktop-cta">
-                        <ButtonLink href={runDiagnosticCtaHref}>Run Diagnostic</ButtonLink>
+                <div className={styles.actions}>
+                    <div className={styles.desktopCta}>
+                        <ButtonLink href={runDiagnosticCtaHref}>
+                            Run the Revenue Diagnostic
+                        </ButtonLink>
                     </div>
 
                     <button
                         type="button"
-                        className={`header__toggle${isOpen ? " is-open" : ""}`}
+                        className={`${styles.toggle}${isOpen ? ` ${styles.toggleOpen}` : ""}`}
                         aria-label={isOpen ? "Close navigation" : "Open navigation"}
                         aria-expanded={isOpen}
                         onClick={toggleMenu}
                     >
-                        <span className="header__toggle-bar" />
-                        <span className="header__toggle-bar" />
-                        <span className="header__toggle-bar" />
+                        <span className={styles.toggleBar} />
+                        <span className={styles.toggleBar} />
+                        <span className={styles.toggleBar} />
                     </button>
                 </div>
             </div>
 
             <div
-                className={`header__mobile${isOpen ? " is-open" : ""}`}
+                className={`${styles.mobile}${isOpen ? ` ${styles.mobileOpen}` : ""}`}
                 aria-hidden={!isOpen}
             >
-                <div className="shell header__mobile-inner">
-                    <nav className="header__mobile-nav" aria-label="Mobile Primary">
+                <div className={`shell ${styles.mobileInner}`}>
+                    <nav className={styles.mobileNav} aria-label="Mobile Primary">
                         {navItems.map((item) => {
                             const active = isActive(pathname, item.matchers);
 
@@ -134,7 +139,9 @@ export function Header() {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className={`header__mobile-link${active ? " is-active" : ""}`}
+                                    className={`${styles.mobileLink}${
+                                        active ? ` ${styles.mobileLinkActive}` : ""
+                                    }`}
                                     onClick={closeMenu}
                                 >
                                     {item.label}
@@ -143,9 +150,9 @@ export function Header() {
                         })}
                     </nav>
 
-                    <div className="header__mobile-actions">
+                    <div className={styles.mobileActions}>
                         <ButtonLink href={runDiagnosticCtaHref} fullWidth onClick={closeMenu}>
-                            Run Diagnostic
+                            Run the Revenue Diagnostic
                         </ButtonLink>
                     </div>
                 </div>

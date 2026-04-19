@@ -18,8 +18,14 @@ export async function POST(request: Request) {
         return NextResponse.redirect(new URL(siteRoutes.resources, request.url), 303);
     }
 
-    const redirectUrl = new URL("/downloads/thank-you", request.url);
-    redirectUrl.searchParams.set("asset", currentAsset.slug);
+    const redirectUrl =
+        currentAsset.slug === "playbook"
+            ? new URL("/thank-you-playbook", request.url)
+            : new URL(`${siteRoutes.resources}/thank-you`, request.url);
+
+    if (currentAsset.slug !== "playbook") {
+        redirectUrl.searchParams.set("asset", currentAsset.slug);
+    }
 
     if (!mailchimpConfig.actionUrl) {
         return NextResponse.redirect(redirectUrl, 303);

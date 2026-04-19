@@ -1,11 +1,11 @@
 export const siteRoutes = {
     home: "/",
-    about: "/about",
-    meddic: "/meddic-implementation",
-    services: "/revenue-consulting-services",
-    speaking: "/sales-keynote-speaker",
-    resources: "/sales-playbooks-resources",
-    diagnostic: "/sales-pipeline-diagnostic",
+    about: "/revenue-operating-system-expert",
+    meddic: "/revenue-operating-system-method",
+    services: "/executive-revenue-advisory",
+    speaking: "/revenue-keynote-speaker",
+    resources: "/revenue-playbooks-and-resources",
+    diagnostic: "/revenue-diagnostic-assessment",
     pipelineAudit: "/sales-pipeline-audit",
     forecastFailure: "/why-sales-forecasts-fail",
 } as const;

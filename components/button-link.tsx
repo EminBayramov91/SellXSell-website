@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { MouseEventHandler, ReactNode } from "react";
 import type { ButtonVariant } from "@/lib/site-content";
+import styles from "./button.module.css";
 
 type ButtonLinkProps = {
     href: string;
@@ -18,9 +19,9 @@ export function ButtonLink({
                                onClick,
                            }: ButtonLinkProps) {
     const className = [
-        "button",
-        variant === "secondary" ? "button--secondary" : "",
-        fullWidth ? "button--full" : "",
+        styles.button,
+        variant === "secondary" ? styles.secondary : "",
+        fullWidth ? styles.full : "",
     ]
         .filter(Boolean)
         .join(" ");

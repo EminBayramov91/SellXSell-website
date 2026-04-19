@@ -1,0 +1,94 @@
+.servicesGrid,
+.stepGrid {
+  display: grid;
+  gap: 16px;
+}
+
+.servicesGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stepGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 24px;
+}
+
+.serviceCard,
+.stepCard,
+.outcomeChip {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--color-border);
+  background:
+    linear-gradient(180deg, rgba(17, 21, 34, 0.96), rgba(8, 10, 18, 0.98)),
+    var(--color-card);
+  box-shadow: var(--shadow-card);
+}
+
+.serviceCard::before,
+.stepCard::before,
+.outcomeChip::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(123, 63, 228, 0.7), transparent);
+}
+
+.serviceCard,
+.stepCard {
+  padding: 22px;
+}
+
+.serviceCardTitle,
+.stepCardTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.serviceCardText,
+.stepCardText {
+  margin: 12px 0 0;
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+.outcomesStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.outcomeChip {
+  padding: 18px 20px;
+  font-size: 1rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.ctaRow {
+  width: min(100%, 620px);
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ctaRow :global(.button) {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .servicesGrid,
+  .outcomesStrip,
+  .ctaRow {
+    grid-template-columns: 1fr;
+  }
+
+  .stepGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

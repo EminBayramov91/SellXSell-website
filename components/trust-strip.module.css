@@ -1,0 +1,19 @@
+.root {
+  padding: 26px 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0)),
+    #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: min(100%, 1100px);
+  height: auto;
+  object-fit: contain;
+}

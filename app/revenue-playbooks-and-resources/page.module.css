@@ -1,0 +1,134 @@
+.copy {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.copy :global(.section-subtitle),
+.copy :global(.section-body) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stack {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  max-width: 600px;
+  min-height: 348px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background:
+    linear-gradient(180deg, rgba(17, 21, 34, 0.98), rgba(11, 15, 26, 0.96)),
+    var(--color-card);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+  transition:
+    transform 0.24s ease,
+    border-color 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(123, 63, 228, 0.7), transparent);
+  opacity: 0.9;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(123, 63, 228, 0.12), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 40%);
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(123, 63, 228, 0.24);
+  box-shadow:
+    0 28px 56px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(123, 63, 228, 0.06);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2.5rem);
+  line-height: 1.18;
+  font-weight: 600;
+}
+
+.cardSubtitle {
+  margin: 12px 0 0;
+  color: var(--color-muted);
+  font-size: clamp(1rem, 0.92rem + 0.45vw, 1.25rem);
+  line-height: 1.55;
+}
+
+.cardBody {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.cardBody p {
+  margin: 0;
+  font-size: clamp(1rem, 0.92rem + 0.45vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.cardActions {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background:
+    radial-gradient(circle at top right, rgba(123, 63, 228, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(17, 21, 34, 0.96), rgba(8, 10, 18, 0.98)),
+    var(--color-card);
+  box-shadow: var(--shadow-card);
+}
+
+.bandCopy :global(.section-title) {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .copy {
+    text-align: left;
+  }
+
+  .copy :global(.section-subtitle),
+  .copy :global(.section-body) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .card {
+    min-height: auto;
+  }
+
+  .band {
+    grid-template-columns: 1fr;
+  }
+}
