@@ -26,3 +26,12 @@
 .actions :global(.button) {
   width: 100%;
 }
+
+.secondaryActions {
+  width: min(100%, 360px);
+  margin: 18px auto 0;
+}
+
+.secondaryActions :global(.button) {
+  width: 100%;
+}
