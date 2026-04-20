@@ -74,9 +74,9 @@ const closeLines = [
 ];
 
 const finalOutcomes = [
-    "Cleaner pipeline.",
-    "Faster exposure.",
-    "Defensible forecast.",
+    "Cleaner pipeline",
+    "Faster exposure",
+    "Defensible forecast",
 ];
 
 export const metadata: Metadata = {
@@ -186,7 +186,7 @@ export default function ExecutiveRevenueAdvisoryPage() {
                 <div className="shell">
                     <div className="section-copy">
                         <h2 className="section-title section-title--secondary">
-                            Before: inflated pipeline. After: inspectable pipeline.
+                            Before: inflated pipeline. After: inspectable pipeline:
                         </h2>
                         <p className="section-subtitle">
                             Before: optimistic forecast. After: defensible forecast.

@@ -16,7 +16,7 @@ const proofItems = [
     "$100M+ ARR scaled",
     "315% increase in qualified pipeline",
     "77% reduction in wasted revenue",
-    "One defensible number.",
+    "One defensible number",
 ];
 
 const patternLines = [

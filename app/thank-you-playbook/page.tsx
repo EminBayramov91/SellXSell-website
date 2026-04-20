@@ -38,7 +38,7 @@ export default function ThankYouPlaybookPage() {
                     <p className={styles.prompt}>Want to pressure test your pipeline?</p>
                     <div className={styles.secondaryActions}>
                         <ButtonLink href={bookDiagnosticCtaHref}>
-                            Book a 20-minute revenue diagnostic
+                            Book a 30-minute revenue diagnostic
                         </ButtonLink>
                     </div>
                 </div>

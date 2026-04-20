@@ -11,6 +11,7 @@ import { ButtonLink } from "./button-link";
 import styles from "./header.module.css";
 
 const navItems = [
+    { label: "Home", href: siteRoutes.home, matchers: [siteRoutes.home] },
     { label: "About", href: siteRoutes.about, matchers: [siteRoutes.about] },
     {
         label: "Approach",
