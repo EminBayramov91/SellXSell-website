@@ -132,7 +132,7 @@ export default async function DownloadAssetPage({
                             type="submit"
                             className={`${buttonStyles.button} ${buttonStyles.full}`}
                         >
-                            Download Now
+                            DOWNLOAD PLAYBOOK
                         </button>
                     </form>
                 </div>

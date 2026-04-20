@@ -19,6 +19,22 @@
   text-transform: uppercase;
 }
 
+.formula {
+  margin: 18px 0 0;
+  font-size: clamp(1rem, 0.92rem + 0.45vw, 1.12rem);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
 .spaced {
   margin-top: 32px;
+}
+
+.footerAction {
+  width: min(100%, 360px);
+  margin: 24px auto 0;
+}
+
+.footerAction :global(.button) {
+  width: 100%;
 }

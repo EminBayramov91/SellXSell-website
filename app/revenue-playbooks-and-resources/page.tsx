@@ -10,39 +10,40 @@ const resourceCards = [
         title: "Playbook",
         subtitle: "Turn language into operating behavior.",
         body: [
+            "Run one deal. See what breaks.",
             "The playbook turns language into operating behavior.",
             "This is where the system stops being conceptual and becomes executable.",
             "Use it to align inspection language across teams.",
         ],
-        button: "Download the Playbook",
+        button: "DOWNLOAD PLAYBOOK",
     },
     {
         id: "checklist",
         title: "Checklist",
         subtitle: "Expose where the pipeline breaks before the forecast call.",
         body: [
+            "Run one deal. See what breaks.",
             "This is where optimism meets evidence.",
             "Use it before forecast calls.",
             "Use it before a bad number becomes a public problem.",
         ],
-        button: "Run the Checklist",
+        button: "DOWNLOAD PLAYBOOK",
     },
     {
         id: "system",
         title: "System",
-        subtitle: "See how ICP, IBC, and MEDDIC work as one operating system.",
+        subtitle: "See how ICP and MEDDIC work as one operating system.",
         body: [
+            "Run one deal. See what breaks.",
             "ICP defines what belongs in the pipeline.",
-            "IBC defines when a deal is actually moving.",
             "MEDDIC validates whether the deal is real.",
         ],
-        button: "See the System",
+        button: "DOWNLOAD PLAYBOOK",
     },
 ];
 
 const systemLines = [
     "ICP defines what belongs in the pipeline.",
-    "IBC defines when a deal is actually moving.",
     "MEDDIC validates whether the deal is real.",
     "If all three do not hold, the opportunity does not count.",
 ];
@@ -100,10 +101,10 @@ export default function RevenuePlaybooksAndResourcesPage() {
                 <div className="shell shell--downloads">
                     <div className={styles.copy}>
                         <h2 className="section-title section-title--secondary">
-                            ICP. IBC. MEDDIC.
+                            ICP. MEDDIC.
                         </h2>
                         <p className="section-subtitle">
-                            Three layers. One operating system. Zero interpretation.
+                            Two layers. One operating system. Zero interpretation.
                         </p>
                         <div className="section-body">
                             {systemLines.map((line) => (
@@ -123,7 +124,7 @@ export default function RevenuePlaybooksAndResourcesPage() {
                             </h2>
                         </div>
                         <ButtonLink href={advisoryCtaHref} variant="secondary">
-                            Book Executive Advisory
+                            BOOK A PRESSURE TEST
                         </ButtonLink>
                     </div>
                 </div>

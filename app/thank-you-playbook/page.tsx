@@ -30,16 +30,14 @@ export default function ThankYouPlaybookPage() {
                                 href={playbookHref}
                                 autoStart={canAutoStartDownload}
                             >
-                                Download the Playbook
+                                DOWNLOAD PLAYBOOK
                             </DownloadButton>
                         </div>
                     ) : null}
 
                     <p className={styles.prompt}>Want to pressure test your pipeline?</p>
                     <div className={styles.secondaryActions}>
-                        <ButtonLink href={bookDiagnosticCtaHref}>
-                            Book a 30-minute revenue diagnostic
-                        </ButtonLink>
+                        <ButtonLink href={bookDiagnosticCtaHref}>BOOK A PRESSURE TEST</ButtonLink>
                     </div>
                 </div>
             </div>

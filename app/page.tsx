@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/button-link";
 import { TrustStrip } from "@/components/trust-strip";
@@ -6,10 +7,10 @@ import { advisoryCtaHref, runDiagnosticCtaHref } from "@/lib/public-site-config"
 import { siteMedia } from "@/lib/site-media";
 import styles from "./page.module.css";
 
-const proofItems = [
-    "315% increase in qualified pipeline.",
-    "77% reduction in wasted revenue.",
-    "One defensible number instead of competing stories.",
+const heroBullets = [
+    "Run one deal through the system",
+    "See what’s real vs assumed",
+    "Get a score + executive actions",
 ];
 
 const forecastLines = [
@@ -22,7 +23,6 @@ const forecastLines = [
 
 const systemLines = [
     "ICP defines what belongs in the pipeline.",
-    "IBC defines when a deal is actually moving.",
     "MEDDIC validates whether the deal is real.",
     "If all three do not hold, the opportunity does not count.",
 ];
@@ -72,9 +72,14 @@ export default function HomePage() {
                         </div>
                         <div className="section-actions section-actions--center">
                             <ButtonLink href={runDiagnosticCtaHref}>
-                                Run the Revenue Diagnostic
+                                TAKE THE REVENUE DIAGNOSTIC
                             </ButtonLink>
                         </div>
+                        <ul className={styles.heroList}>
+                            {heroBullets.map((item) => (
+                                <li key={item}>{item}</li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -101,6 +106,12 @@ export default function HomePage() {
                         bleed
                     />
                 </div>
+                <div className={styles.videoPrompt}>
+                    <p>If this sounds familiar, don’t guess.</p>
+                    <ButtonLink href={runDiagnosticCtaHref}>
+                        TAKE THE REVENUE DIAGNOSTIC
+                    </ButtonLink>
+                </div>
             </section>
 
             <TrustStrip />
@@ -110,15 +121,35 @@ export default function HomePage() {
                     <div className={styles.accentRule} />
                     <div className={styles.proofKicker}>Built from scaling $100M+ in ARR.</div>
                     <div className={styles.proofStrip}>
-                        <div className={styles.proofItem}>$100M+ ARR scaled</div>
-                        {proofItems.map((item) => (
-                            <div key={item} className={styles.proofItem}>
-                                {item}
-                            </div>
-                        ))}
+                        <div className={styles.proofItem}>
+                            <span className={styles.metricNumber}>
+                                <span className="counter">100</span>M+ ARR SCALED
+                            </span>
+                        </div>
+                        <div className={styles.proofItem}>
+                            <span className={styles.metricNumber}>
+                                <span className="counter">315</span>% INCREASE IN QUALIFIED
+                                PIPELINE
+                            </span>
+                        </div>
+                        <div className={styles.proofItem}>
+                            <span className={styles.metricNumber}>
+                                <span className="counter">77</span>% REDUCTION IN WASTED REVENUE
+                            </span>
+                        </div>
                     </div>
+                    <p className={styles.metricNote}>
+                        One defensible number instead of competing stories.
+                    </p>
                 </div>
             </section>
+
+            <div className={styles.hookBlock}>
+                <h2>Bring One Deal. See What Breaks.</h2>
+                <ButtonLink href={runDiagnosticCtaHref}>
+                    TAKE THE REVENUE DIAGNOSTIC
+                </ButtonLink>
+            </div>
 
             <section className="content-section content-section--alt">
                 <div className="shell">
@@ -142,10 +173,10 @@ export default function HomePage() {
                 <div className="shell">
                     <div className="section-copy">
                         <h2 className="section-title section-title--secondary">
-                            ICP. IBC. MEDDIC.
+                            ICP. MEDDIC.
                         </h2>
                         <p className="section-subtitle">
-                            Three layers. One operating system. Zero interpretation.
+                            Two layers. One operating system. Zero interpretation.
                         </p>
                         <div className="section-body">
                             {systemLines.map((line) => (
@@ -163,16 +194,16 @@ export default function HomePage() {
                         </article>
 
                         <article className="bucket-card">
-                            <h3 className="bucket-card__title">IBC</h3>
+                            <h3 className="bucket-card__title">MEDDIC</h3>
                             <p className="bucket-card__text">
-                                Separates actual deal movement from momentum language.
+                                Forces evidence into the forecast before leadership trusts it.
                             </p>
                         </article>
 
                         <article className="bucket-card">
-                            <h3 className="bucket-card__title">MEDDIC</h3>
+                            <h3 className="bucket-card__title">Alignment</h3>
                             <p className="bucket-card__text">
-                                Forces evidence into the forecast before leadership trusts it.
+                                Keeps leadership inspecting the same deal the same way.
                             </p>
                         </article>
                     </div>
@@ -201,14 +232,40 @@ export default function HomePage() {
                 <div className="shell shell--narrow">
                     <div className={styles.ctaRow}>
                         <ButtonLink href={runDiagnosticCtaHref}>
-                            Run the Revenue Diagnostic
+                            TAKE THE REVENUE DIAGNOSTIC
                         </ButtonLink>
                         <ButtonLink href={advisoryCtaHref} variant="secondary">
-                            Book Executive Advisory
+                            BOOK A PRESSURE TEST
                         </ButtonLink>
                     </div>
                 </div>
             </section>
+
+            <Script id="homepage-counters" strategy="afterInteractive">
+                {`const counters = document.querySelectorAll('.counter');
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const counter = entry.target;
+const number = parseInt(counter.innerText, 10);
+let count = 0;
+const increment = number / 60;
+function update() {
+if (count < number) {
+count += increment;
+counter.innerText = Math.floor(count);
+requestAnimationFrame(update);
+} else {
+counter.innerText = number;
+}
+}
+update();
+observer.unobserve(counter);
+}
+});
+}, { threshold: 0.5 });
+counters.forEach(counter => observer.observe(counter));`}
+            </Script>
         </>
     );
 }

@@ -77,7 +77,30 @@ export default function RevenueOperatingSystemExpertPage() {
                             system problem.
                         </h1>
                         <div className="section-body">
-                            {heroLines.map((line) => (
+                            <p>{heroLines[0]}</p>
+                        </div>
+
+                        <div className={styles.heroInsert}>
+                            <div className={styles.heroInsertBlock}>
+                                <h3>Built, Not Theorized</h3>
+                                <ul className={styles.heroInsertList}>
+                                    <li>Built from scaling $0 to $100M+ revenue systems</li>
+                                    <li>Used by CFOs, CROs, executive teams</li>
+                                </ul>
+                            </div>
+
+                            <div className={styles.heroInsertBlock}>
+                                <h3>Shelley Dunagan</h3>
+                                <ul className={styles.heroInsertList}>
+                                    <li>Operator</li>
+                                    <li>Built revenue systems</li>
+                                    <li>Focus: inspection</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="section-body">
+                            {heroLines.slice(1).map((line) => (
                                 <p key={line}>{line}</p>
                             ))}
                         </div>
@@ -95,7 +118,7 @@ export default function RevenueOperatingSystemExpertPage() {
 
                         <div className="section-actions">
                             <ButtonLink href={runDiagnosticCtaHref}>
-                                Run the Revenue Diagnostic
+                                TAKE THE REVENUE DIAGNOSTIC
                             </ButtonLink>
                         </div>
                     </div>
@@ -131,7 +154,7 @@ export default function RevenueOperatingSystemExpertPage() {
                         </div>
                         <div className="section-actions">
                             <ButtonLink href={advisoryCtaHref} variant="secondary">
-                                Book Executive Advisory
+                                BOOK A PRESSURE TEST
                             </ButtonLink>
                         </div>
                     </div>
@@ -179,9 +202,9 @@ export default function RevenueOperatingSystemExpertPage() {
                             Bad deals do not poison the forecast because of effort. They stay
                             active because no one removes them fast enough.
                         </p>
-                        <div className="section-actions">
+                        <div className={styles.footerAction}>
                             <ButtonLink href={runDiagnosticCtaHref}>
-                                Run the Revenue Diagnostic
+                                TAKE THE REVENUE DIAGNOSTIC
                             </ButtonLink>
                         </div>
                     </div>

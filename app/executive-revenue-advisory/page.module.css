@@ -81,6 +81,19 @@
   width: 100%;
 }
 
+.pressureOffer {
+  display: grid;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.pressureOffer p {
+  margin: 0;
+  font-size: clamp(1rem, 0.92rem + 0.45vw, 1.12rem);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
 @media (max-width: 767px) {
   .servicesGrid,
   .outcomesStrip,

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button-link";
-import { advisoryCtaHref, runDiagnosticCtaHref } from "@/lib/public-site-config";
+import {
+    paidDiagnosticCtaHref,
+    runDiagnosticCtaHref,
+} from "@/lib/public-site-config";
 import { siteMedia } from "@/lib/site-media";
 import styles from "./page.module.css";
 
@@ -16,7 +19,7 @@ const serviceCards = [
     },
     {
         title: "Operating System Installation",
-        text: "ICP / IBC / MEDDIC installed as one inspection language.",
+        text: "ICP / MEDDIC installed as one inspection language.",
     },
 ];
 
@@ -31,7 +34,7 @@ const executionSteps = [
     },
     {
         title: "Install",
-        text: "Operationalize ICP, IBC, and MEDDIC as one system.",
+        text: "Operationalize ICP and MEDDIC as one system.",
     },
     {
         title: "Inspect",
@@ -55,7 +58,6 @@ const operatingSystemLines = [
 
 const installationLines = [
     "ICP asks whether the deal belongs.",
-    "IBC asks whether it is actually moving.",
     "MEDDIC asks whether it is real.",
     "If it passes, it stays. If it does not, it comes out.",
 ];
@@ -116,11 +118,11 @@ export default function ExecutiveRevenueAdvisoryPage() {
                             ))}
                         </div>
                         <div className="section-actions">
-                            <ButtonLink href={advisoryCtaHref}>
-                                Book Executive Advisory
+                            <ButtonLink href={runDiagnosticCtaHref}>
+                                TAKE THE REVENUE DIAGNOSTIC
                             </ButtonLink>
-                            <ButtonLink href={runDiagnosticCtaHref} variant="secondary">
-                                Run the Revenue Diagnostic
+                            <ButtonLink href={paidDiagnosticCtaHref} variant="secondary">
+                                BOOK A PRESSURE TEST
                             </ButtonLink>
                         </div>
                     </div>
@@ -224,12 +226,17 @@ export default function ExecutiveRevenueAdvisoryPage() {
                         ))}
                     </div>
 
+                    <div className={styles.pressureOffer}>
+                        <p>Executive Advisory — $1,800</p>
+                        <p>Pressure test your pipeline live</p>
+                    </div>
+
                     <div className={styles.ctaRow}>
-                        <ButtonLink href={advisoryCtaHref}>
-                            Book Executive Advisory
+                        <ButtonLink href={paidDiagnosticCtaHref}>
+                            BOOK A PRESSURE TEST
                         </ButtonLink>
                         <ButtonLink href={runDiagnosticCtaHref} variant="secondary">
-                            Run the Revenue Diagnostic
+                            TAKE THE REVENUE DIAGNOSTIC
                         </ButtonLink>
                     </div>
                 </div>

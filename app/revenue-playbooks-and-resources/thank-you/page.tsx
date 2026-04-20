@@ -55,15 +55,15 @@ export default async function DownloadsThankYouPage({
                                 href={downloadHref}
                                 autoStart={canAutoStartDownload}
                             >
-                                Download the {currentAsset?.label}
+                                DOWNLOAD PLAYBOOK
                             </DownloadButton>
                         ) : null}
 
                         <ButtonLink href={bookDiagnosticCtaHref}>
-                            Book a 20-minute revenue diagnostic
+                            BOOK A PRESSURE TEST
                         </ButtonLink>
                         <ButtonLink href={paidDiagnosticCtaHref} variant="secondary">
-                            Run Paid Diagnostic
+                            TAKE THE REVENUE DIAGNOSTIC
                         </ButtonLink>
                     </div>
                 </div>

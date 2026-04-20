@@ -30,6 +30,14 @@ const formats = [
     "Revenue team event",
 ];
 
+const insertedTopics = [
+    "Fix Your Forecast",
+    "Why Your Pipeline Is Lying",
+    "MEDDIC as an Operating System",
+];
+
+const insertedFormats = ["Keynote", "Workshop", "Executive Session"];
+
 export const metadata: Metadata = {
     title: "Revenue Keynote Speaker",
     description: "Keynote Speaker for Executive Revenue Teams.",
@@ -65,9 +73,35 @@ export default function RevenueKeynoteSpeakerPage() {
                         </div>
                         <div className="section-actions">
                             <ButtonLink href={speakingCtaHref}>
-                                Inquire About Speaking
+                                BOOK A PRESSURE TEST
                             </ButtonLink>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="content-section content-section--alt">
+                <div className="shell">
+                    <div className={styles.insertBlock}>
+                        <h3>Topics</h3>
+                        <ul className={styles.insertList}>
+                            {insertedTopics.map((item) => (
+                                <li key={item}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section className="content-section">
+                <div className="shell">
+                    <div className={styles.insertBlock}>
+                        <h3>Formats</h3>
+                        <ul className={styles.insertList}>
+                            {insertedFormats.map((item) => (
+                                <li key={item}>{item}</li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -147,7 +181,7 @@ export default function RevenueKeynoteSpeakerPage() {
             <section className="content-section content-section--alt">
                 <div className="shell shell--narrow">
                     <div className={styles.ctaRow}>
-                        <ButtonLink href={speakingCtaHref}>Inquire About Speaking</ButtonLink>
+                        <ButtonLink href={speakingCtaHref}>BOOK A PRESSURE TEST</ButtonLink>
                     </div>
                 </div>
             </section>

@@ -109,7 +109,7 @@ export function Header() {
                 <div className={styles.actions}>
                     <div className={styles.desktopCta}>
                         <ButtonLink href={runDiagnosticCtaHref}>
-                            Run the Revenue Diagnostic
+                            TAKE THE REVENUE DIAGNOSTIC
                         </ButtonLink>
                     </div>
 
@@ -153,7 +153,7 @@ export function Header() {
 
                     <div className={styles.mobileActions}>
                         <ButtonLink href={runDiagnosticCtaHref} fullWidth onClick={closeMenu}>
-                            Run the Revenue Diagnostic
+                            TAKE THE REVENUE DIAGNOSTIC
                         </ButtonLink>
                     </div>
                 </div>

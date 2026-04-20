@@ -50,14 +50,14 @@ export default function RevenueOperatingSystemMethodPage() {
                         </h1>
                         <p className="section-subtitle">Your pipeline is lying to you.</p>
                         <div className="section-body">
-                            <p>Pipeline ≠ coverage. Feels close ≠ will close.</p>
+                            <p>Pipeline {"\u2260"} coverage. Feels close {"\u2260"} will close.</p>
                             {heroLines.map((line) => (
                                 <p key={line}>{line}</p>
                             ))}
                         </div>
                         <div className="section-actions section-actions--center">
                             <ButtonLink href={runDiagnosticCtaHref}>
-                                Run the Revenue Diagnostic
+                                TAKE THE REVENUE DIAGNOSTIC
                             </ButtonLink>
                         </div>
                     </div>
@@ -86,6 +86,9 @@ export default function RevenueOperatingSystemMethodPage() {
                         <h2 className="section-title section-title--secondary">
                             Every deal runs through the same inspection system.
                         </h2>
+                        <p className={styles.formula}>
+                            ICP MATCH {"\u2192"} MEDDIC {"\u2192"} INTERNAL ALIGNMENT
+                        </p>
                         <div className="section-body">
                             {inspectionLines.map((line) => (
                                 <p key={line}>{line}</p>
@@ -112,7 +115,7 @@ export default function RevenueOperatingSystemMethodPage() {
                         <div className="system-layer">
                             <span className="system-layer__index">02</span>
                             <div>
-                                <h3 className="system-layer__title">IBC / Deal Movement</h3>
+                                <h3 className="system-layer__title">Deal Movement</h3>
                                 <p className="system-layer__text">
                                     Separates actual progress from the language of momentum.
                                 </p>
@@ -183,9 +186,9 @@ export default function RevenueOperatingSystemMethodPage() {
                                 breaks.
                             </p>
                         </div>
-                        <div className="section-actions section-actions--center">
+                        <div className={styles.footerAction}>
                             <ButtonLink href={runDiagnosticCtaHref}>
-                                Run the Revenue Diagnostic
+                                TAKE THE REVENUE DIAGNOSTIC
                             </ButtonLink>
                         </div>
                     </div>

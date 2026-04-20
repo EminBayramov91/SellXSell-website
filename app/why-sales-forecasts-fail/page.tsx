@@ -16,7 +16,7 @@ const forecastSections: PageSection[] = [
         ],
         ctas: [
             {
-                label: "Run the Revenue Diagnostic",
+                label: "TAKE THE REVENUE DIAGNOSTIC",
                 href: runDiagnosticCtaHref,
                 variant: "primary",
             },
@@ -39,13 +39,12 @@ const forecastSections: PageSection[] = [
         subtitle: "One number. One language. No debate.",
         body: [
             "ICP defines what belongs in the pipeline.",
-            "IBC defines when a deal is actually moving.",
             "MEDDIC defines whether the deal is real.",
-            "When all three align, the forecast stops being a story and starts being defensible.",
+            "When both align, the forecast stops being a story and starts being defensible.",
         ],
         ctas: [
             {
-                label: "Book Executive Advisory",
+                label: "BOOK A PRESSURE TEST",
                 href: advisoryCtaHref,
                 variant: "secondary",
             },

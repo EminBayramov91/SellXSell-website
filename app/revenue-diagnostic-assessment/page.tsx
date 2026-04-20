@@ -38,7 +38,9 @@ export default function RevenueDiagnosticAssessmentPage() {
                             In 3-5 minutes, identify the gaps in your revenue system.
                         </p>
                         <div className="section-actions section-actions--center">
-                            <ButtonLink href="#diagnostic-app">Start Diagnostic</ButtonLink>
+                            <ButtonLink href="#diagnostic-app">
+                                TAKE THE REVENUE DIAGNOSTIC
+                            </ButtonLink>
                         </div>
                     </div>
                 </div>
@@ -101,9 +103,7 @@ export default function RevenueDiagnosticAssessmentPage() {
             <section className="content-section">
                 <div className="shell shell--narrow">
                     <div className={styles.ctaRow}>
-                        <ButtonLink href={bookDiagnosticCtaHref}>
-                            Book a 20-minute revenue diagnostic
-                        </ButtonLink>
+                        <ButtonLink href={bookDiagnosticCtaHref}>BOOK A PRESSURE TEST</ButtonLink>
                     </div>
                 </div>
             </section>
