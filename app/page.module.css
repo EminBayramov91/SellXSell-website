@@ -65,20 +65,45 @@
 .proofItem {
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
-  border: 1px solid var(--color-border);
-  background:
-    linear-gradient(180deg, rgba(17, 21, 34, 0.96), rgba(8, 10, 18, 0.98)),
-    var(--color-card);
-  box-shadow: var(--shadow-card);
-  padding: 18px 20px;
+  border-radius: 20px;
+  border: none;
+  background: radial-gradient(circle at center, #7f4bff 0%, #6f2bff 70%);
+  box-shadow: 0 16px 28px rgba(111, 43, 255, 0.24);
+  padding: 24px 20px;
   font-size: 1rem;
   line-height: 1.55;
   text-align: center;
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.5s ease-out;
+}
+
+.proofItemVisible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .metricNumber {
-  display: inline-block;
+  display: block;
+  color: #ffffff;
+  font-size: clamp(2.1rem, 1.75rem + 1.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.metricLabel {
+  display: block;
+  margin-top: 12px;
+  color: #e6e6e6;
+  font-size: clamp(0.9rem, 0.82rem + 0.3vw, 1rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .metricNote {
@@ -126,9 +151,20 @@
 .proofItem::before {
   content: "";
   position: absolute;
-  inset: 0 0 auto;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(123, 63, 228, 0.7), transparent);
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.12) 0%, transparent 58%);
+  pointer-events: none;
+}
+
+.proofItem:hover,
+.proofItem:active {
+  transform: scale(1.06);
+  box-shadow: 0 0 30px rgba(111, 43, 255, 0.7);
+}
+
+.proofItem > * {
+  position: relative;
+  z-index: 1;
 }
 
 .ctaRow {

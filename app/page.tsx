@@ -123,19 +123,23 @@ export default function HomePage() {
                     <div className={styles.proofStrip}>
                         <div className={styles.proofItem}>
                             <span className={styles.metricNumber}>
-                                <span className="counter">100</span>M+ ARR SCALED
+                                <span className="counter">100</span>M+
+                            </span>
+                            <span className={styles.metricLabel}>ARR SCALED</span>
+                        </div>
+                        <div className={styles.proofItem}>
+                            <span className={styles.metricNumber}>
+                                <span className="counter">315</span>%
+                            </span>
+                            <span className={styles.metricLabel}>
+                                INCREASE IN QUALIFIED PIPELINE
                             </span>
                         </div>
                         <div className={styles.proofItem}>
                             <span className={styles.metricNumber}>
-                                <span className="counter">315</span>% INCREASE IN QUALIFIED
-                                PIPELINE
+                                <span className="counter">77</span>%
                             </span>
-                        </div>
-                        <div className={styles.proofItem}>
-                            <span className={styles.metricNumber}>
-                                <span className="counter">77</span>% REDUCTION IN WASTED REVENUE
-                            </span>
+                            <span className={styles.metricLabel}>REDUCTION IN WASTED REVENUE</span>
                         </div>
                     </div>
                     <p className={styles.metricNote}>
@@ -243,7 +247,8 @@ export default function HomePage() {
 
             <Script id="homepage-counters" strategy="afterInteractive">
                 {`const counters = document.querySelectorAll('.counter');
-const observer = new IntersectionObserver(entries => {
+const cards = document.querySelectorAll('.${styles.proofItem}');
+const counterObserver = new IntersectionObserver(entries => {
 entries.forEach(entry => {
 if (entry.isIntersecting) {
 const counter = entry.target;
@@ -260,11 +265,20 @@ counter.innerText = number;
 }
 }
 update();
-observer.unobserve(counter);
+counterObserver.unobserve(counter);
 }
 });
 }, { threshold: 0.5 });
-counters.forEach(counter => observer.observe(counter));`}
+const cardObserver = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('${styles.proofItemVisible}');
+cardObserver.unobserve(entry.target);
+}
+});
+}, { threshold: 0.35 });
+counters.forEach(counter => counterObserver.observe(counter));
+cards.forEach(card => cardObserver.observe(card));`}
             </Script>
         </>
     );
