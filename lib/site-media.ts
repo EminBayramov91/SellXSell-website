@@ -65,7 +65,7 @@ export const siteMedia = {
     diagnostic: {
         landingVideo: {
             src: "/media/diagnostic/landing-video.mp4",
-            poster: "/media/diagnostic/landing-video-poster.jpg",
+            poster: "/media/diagnostic/landing-video-poster-renew.jpg",
             title: "SellXSell diagnostic landing page video",
         },
     },
