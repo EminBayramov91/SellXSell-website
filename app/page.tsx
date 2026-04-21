@@ -3,7 +3,10 @@ import type { Metadata } from "next";
 import { ButtonLink } from "@/components/button-link";
 import { TrustStrip } from "@/components/trust-strip";
 import { VideoFeature } from "@/components/video-feature";
-import { advisoryCtaHref, runDiagnosticCtaHref } from "@/lib/public-site-config";
+import {
+    bookDiagnosticCtaHref,
+    runDiagnosticCtaHref,
+} from "@/lib/public-site-config";
 import { siteMedia } from "@/lib/site-media";
 import styles from "./page.module.css";
 
@@ -238,7 +241,7 @@ export default function HomePage() {
                         <ButtonLink href={runDiagnosticCtaHref}>
                             TAKE THE REVENUE DIAGNOSTIC
                         </ButtonLink>
-                        <ButtonLink href={advisoryCtaHref} variant="secondary">
+                        <ButtonLink href={bookDiagnosticCtaHref} variant="secondary">
                             BOOK A PRESSURE TEST
                         </ButtonLink>
                     </div>

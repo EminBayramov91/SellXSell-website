@@ -73,7 +73,7 @@ export default function RevenueKeynoteSpeakerPage() {
                         </div>
                         <div className="section-actions">
                             <ButtonLink href={speakingCtaHref}>
-                                BOOK A PRESSURE TEST
+                                Inquire about Speaking
                             </ButtonLink>
                         </div>
                     </div>
@@ -181,7 +181,7 @@ export default function RevenueKeynoteSpeakerPage() {
             <section className="content-section content-section--alt">
                 <div className="shell shell--narrow">
                     <div className={styles.ctaRow}>
-                        <ButtonLink href={speakingCtaHref}>BOOK A PRESSURE TEST</ButtonLink>
+                        <ButtonLink href={speakingCtaHref}>Inquire about Speaking</ButtonLink>
                     </div>
                 </div>
             </section>

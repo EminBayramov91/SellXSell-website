@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button-link";
 import {
-    paidDiagnosticCtaHref,
+    bookDiagnosticCtaHref,
     runDiagnosticCtaHref,
 } from "@/lib/public-site-config";
 import { siteMedia } from "@/lib/site-media";
@@ -121,7 +121,7 @@ export default function ExecutiveRevenueAdvisoryPage() {
                             <ButtonLink href={runDiagnosticCtaHref}>
                                 TAKE THE REVENUE DIAGNOSTIC
                             </ButtonLink>
-                            <ButtonLink href={paidDiagnosticCtaHref} variant="secondary">
+                            <ButtonLink href={bookDiagnosticCtaHref} variant="secondary">
                                 BOOK A PRESSURE TEST
                             </ButtonLink>
                         </div>
@@ -173,7 +173,7 @@ export default function ExecutiveRevenueAdvisoryPage() {
                 <div className="shell">
                     <div className="section-copy">
                         <h2 className="section-title section-title--secondary">
-                            What the advisory engagement installs.
+                            What the advisory engagement installs:
                         </h2>
                         <div className="section-body">
                             {installationLines.map((line) => (
@@ -188,7 +188,7 @@ export default function ExecutiveRevenueAdvisoryPage() {
                 <div className="shell">
                     <div className="section-copy">
                         <h2 className="section-title section-title--secondary">
-                            Before: inflated pipeline. After: inspectable pipeline:
+                            Before: inflated pipeline. After: inspectable pipeline.
                         </h2>
                         <p className="section-subtitle">
                             Before: optimistic forecast. After: defensible forecast.
@@ -232,7 +232,7 @@ export default function ExecutiveRevenueAdvisoryPage() {
                     </div>
 
                     <div className={styles.ctaRow}>
-                        <ButtonLink href={paidDiagnosticCtaHref}>
+                        <ButtonLink href={bookDiagnosticCtaHref}>
                             BOOK A PRESSURE TEST
                         </ButtonLink>
                         <ButtonLink href={runDiagnosticCtaHref} variant="secondary">

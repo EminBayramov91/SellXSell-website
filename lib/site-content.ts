@@ -456,7 +456,7 @@ export const speakingSections: PageSection[] = [
         ],
         ctas: [
             {
-                label: "Inquire About Speaking",
+                label: "Inquire about Speaking",
                 href: speakingCtaHref,
                 variant: "primary",
             },
@@ -500,7 +500,7 @@ export const speakingSections: PageSection[] = [
         ],
         ctas: [
             {
-                label: "Inquire About Speaking",
+                label: "Inquire about Speaking",
                 href: speakingCtaHref,
                 variant: "primary",
             },

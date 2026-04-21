@@ -1,6 +1,7 @@
 import { siteRoutes } from "@/lib/site-routes";
 
 const calendlyBookingUrl = "https://calendly.com/sellxsellrev";
+const pressureTestBookingUrl = "https://calendly.com/sellxsellrev/30min";
 const diagnosticAppUrl = "https://sell-x-sell.vercel.app/";
 
 const readPublicEnv = (name: string) => {
@@ -20,7 +21,7 @@ export const runDiagnosticCtaHref =
 
 export const bookDiagnosticCtaHref =
     readPublicEnv("NEXT_PUBLIC_SELLXSELL_BOOK_DIAGNOSTIC_URL") ??
-    calendlyBookingUrl;
+    pressureTestBookingUrl;
 
 export const paidDiagnosticCtaHref =
     readPublicEnv("NEXT_PUBLIC_SELLXSELL_PAID_DIAGNOSTIC_URL") ??

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { PageSections } from "@/components/page-sections";
-import { advisoryCtaHref, runDiagnosticCtaHref } from "@/lib/public-site-config";
+import {
+    bookDiagnosticCtaHref,
+    runDiagnosticCtaHref,
+} from "@/lib/public-site-config";
 import type { PageSection } from "@/lib/site-content";
 
 const forecastSections: PageSection[] = [
@@ -45,7 +48,7 @@ const forecastSections: PageSection[] = [
         ctas: [
             {
                 label: "BOOK A PRESSURE TEST",
-                href: advisoryCtaHref,
+                href: bookDiagnosticCtaHref,
                 variant: "secondary",
             },
         ],

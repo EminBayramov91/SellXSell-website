@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button-link";
-import { advisoryCtaHref, runDiagnosticCtaHref } from "@/lib/public-site-config";
+import {
+    bookDiagnosticCtaHref,
+    runDiagnosticCtaHref,
+} from "@/lib/public-site-config";
 import { siteMedia } from "@/lib/site-media";
 import styles from "./page.module.css";
 
@@ -153,7 +156,7 @@ export default function RevenueOperatingSystemExpertPage() {
                             ))}
                         </div>
                         <div className="section-actions">
-                            <ButtonLink href={advisoryCtaHref} variant="secondary">
+                            <ButtonLink href={bookDiagnosticCtaHref} variant="secondary">
                                 BOOK A PRESSURE TEST
                             </ButtonLink>
                         </div>

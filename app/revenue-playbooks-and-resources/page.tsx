@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/button-link";
-import { advisoryCtaHref } from "@/lib/public-site-config";
+import { bookDiagnosticCtaHref } from "@/lib/public-site-config";
 import { siteRoutes } from "@/lib/site-routes";
 import styles from "./page.module.css";
 
@@ -123,7 +123,7 @@ export default function RevenuePlaybooksAndResourcesPage() {
                                 Need this installed across leadership, not just downloaded?
                             </h2>
                         </div>
-                        <ButtonLink href={advisoryCtaHref} variant="secondary">
+                        <ButtonLink href={bookDiagnosticCtaHref} variant="secondary">
                             BOOK A PRESSURE TEST
                         </ButtonLink>
                     </div>
