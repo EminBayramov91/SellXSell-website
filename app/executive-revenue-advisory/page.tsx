@@ -6,6 +6,7 @@ import {
     runDiagnosticCtaHref,
 } from "@/lib/public-site-config";
 import { siteMedia } from "@/lib/site-media";
+import { siteRoutes } from "@/lib/site-routes";
 import styles from "./page.module.css";
 
 const serviceCards = [
@@ -81,9 +82,66 @@ const finalOutcomes = [
     "Defensible forecast",
 ];
 
+const workWays = [
+    {
+        title: "Free diagnostic",
+        text: "Run one deal through 13 questions. Instant output. No cost.",
+        href: siteRoutes.diagnostic,
+        cta: "Run the diagnostic",
+    },
+    {
+        title: "Pipeline Intelligence",
+        text: "Full pipeline. 24 questions. Every deal scored. From $1,800/year.",
+        href: siteRoutes.pricing,
+        cta: "View pricing",
+    },
+    {
+        title: "Full Advisory",
+        text: "90-day cross-functional execution across sales, finance, product, and leadership. From $25,000.",
+        href: bookDiagnosticCtaHref,
+        cta: "Book below",
+    },
+];
+
+const trustSignals = [
+    {
+        value: "$100M+",
+        label: "ARR scaled",
+    },
+    {
+        value: "20+ years",
+        label: "Revenue leadership",
+    },
+    {
+        value: "91%",
+        label: "Cannot execute on their own data",
+    },
+];
+
 export const metadata: Metadata = {
-    title: "Executive Revenue Advisory",
-    description: "Executive Revenue Advisory Services.",
+    title: {
+        absolute: "Revenue Advisory — Cross-Functional Pipeline Execution | SellXSell",
+    },
+    description:
+        "The diagnostic finds what's broken. The advisory fixes it — across sales, finance, product, and leadership. 90-day engagements. $100M+ in scaled ARR. Book a 20-minute pipeline review.",
+    alternates: {
+        canonical: "/executive-revenue-advisory",
+    },
+    openGraph: {
+        title: "Revenue Advisory — Cross-Functional Pipeline Execution | SellXSell",
+        description:
+            "The diagnostic finds what's broken. The advisory fixes it — across sales, finance, product, and leadership. 90-day engagements. $100M+ in scaled ARR. Book a 20-minute pipeline review.",
+        url: "/executive-revenue-advisory",
+        images: ["/og-sellxsell.png"],
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Revenue Advisory — Cross-Functional Pipeline Execution | SellXSell",
+        description:
+            "The diagnostic finds what's broken. The advisory fixes it — across sales, finance, product, and leadership. 90-day engagements. $100M+ in scaled ARR. Book a 20-minute pipeline review.",
+        images: ["/og-sellxsell.png"],
+    },
 };
 
 export default function ExecutiveRevenueAdvisoryPage() {
@@ -123,6 +181,9 @@ export default function ExecutiveRevenueAdvisoryPage() {
                             </ButtonLink>
                             <ButtonLink href={bookDiagnosticCtaHref} variant="secondary">
                                 BOOK A PRESSURE TEST
+                            </ButtonLink>
+                            <ButtonLink href={siteRoutes.pricing} variant="secondary">
+                                VIEW PRICING
                             </ButtonLink>
                         </div>
                     </div>
@@ -226,9 +287,33 @@ export default function ExecutiveRevenueAdvisoryPage() {
                         ))}
                     </div>
 
+                    <div className={styles.workWays}>
+                        <h3>Three ways to work with SellXSell</h3>
+                        <div className={styles.workWaysGrid}>
+                            {workWays.map((way) => (
+                                <article key={way.title} className={styles.workWayCard}>
+                                    <h4>{way.title}</h4>
+                                    <p>{way.text}</p>
+                                    <ButtonLink href={way.href} variant="secondary">
+                                        {way.cta}
+                                    </ButtonLink>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className={styles.trustSignals} aria-label="Advisory trust signals">
+                        {trustSignals.map((signal) => (
+                            <div key={signal.value} className={styles.trustSignal}>
+                                <strong>{signal.value}</strong>
+                                <span>{signal.label}</span>
+                            </div>
+                        ))}
+                    </div>
+
                     <div className={styles.pressureOffer}>
-                        <p>Executive Advisory — $1,800</p>
-                        <p>Pressure test your pipeline live</p>
+                        <p>Full Advisory — from $25,000</p>
+                        <p>90-day cross-functional engagement</p>
                     </div>
 
                     <div className={styles.ctaRow}>
@@ -237,6 +322,9 @@ export default function ExecutiveRevenueAdvisoryPage() {
                         </ButtonLink>
                         <ButtonLink href={runDiagnosticCtaHref} variant="secondary">
                             TAKE THE REVENUE DIAGNOSTIC
+                        </ButtonLink>
+                        <ButtonLink href={siteRoutes.pricing} variant="secondary">
+                            VIEW PRICING
                         </ButtonLink>
                     </div>
                 </div>

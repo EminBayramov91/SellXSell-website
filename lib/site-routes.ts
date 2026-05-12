@@ -5,6 +5,8 @@ export const siteRoutes = {
     services: "/executive-revenue-advisory",
     speaking: "/revenue-keynote-speaker",
     resources: "/revenue-playbooks-and-resources",
+    newsletter: "/newsletter",
+    pricing: "/pricing",
     diagnostic: "/revenue-diagnostic-assessment",
     pipelineAudit: "/sales-pipeline-audit",
     forecastFailure: "/why-sales-forecasts-fail",

@@ -23,7 +23,7 @@
   margin: 20px auto 0;
 }
 
-.actions :global(.button) {
+.actions > a {
   width: 100%;
 }
 
@@ -32,6 +32,6 @@
   margin: 18px auto 0;
 }
 
-.secondaryActions :global(.button) {
+.secondaryActions > a {
   width: 100%;
 }

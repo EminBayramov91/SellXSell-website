@@ -51,16 +51,16 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   margin-left: auto;
 }
 
 .navLink {
-  padding: 10px 12px;
+  padding: 10px 9px;
   border-radius: 8px;
   border: 1px solid transparent;
   color: var(--color-muted);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1;
   transition:
     color 0.24s ease,
@@ -239,7 +239,7 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1120px) {
   .header {
     overflow: visible;
   }

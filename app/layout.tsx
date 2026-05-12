@@ -10,8 +10,36 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SellXSell",
-  description: "Inspection-driven revenue operating system.",
+  metadataBase: new URL("https://sellxsell.com"),
+  title: {
+    default: "SellXSell | Revenue Operating System",
+    template: "%s | SellXSell",
+  },
+  description:
+      "SellXSell is an inspection-driven revenue operating system for exposing pipeline risk and building a defensible forecast.",
+  openGraph: {
+    title: "SellXSell | Revenue Operating System",
+    description:
+        "Expose pipeline risk, inspect real deals, and build a defensible revenue forecast.",
+    url: "https://sellxsell.com",
+    siteName: "SellXSell",
+    images: [
+        {
+        url: "/og-sellxsell.png",
+        width: 1200,
+        height: 630,
+        alt: "SellXSell",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SellXSell | Revenue Operating System",
+    description:
+        "Expose pipeline risk, inspect real deals, and build a defensible revenue forecast.",
+    images: ["/og-sellxsell.png"],
+  },
 };
 
 export default function RootLayout({

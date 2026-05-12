@@ -38,6 +38,22 @@ const closeLines = [
     "Most won't.",
 ];
 
+const softwareApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "SellXSell Revenue Diagnostic",
+    applicationCategory: "BusinessApplication",
+    offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+    },
+    description:
+        "MEDDIC-based deal inspection tool that scores any sales opportunity in under 5 minutes. Free for one deal.",
+    url: "https://app.sellxsell.com",
+    operatingSystem: "Web",
+};
+
 export const metadata: Metadata = {
     title: "Revenue Operating System for Executive Revenue Leaders",
     description:
@@ -47,6 +63,14 @@ export const metadata: Metadata = {
 export default function HomePage() {
     return (
         <>
+            <Script
+                id="homepage-software-application-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(softwareApplicationSchema),
+                }}
+            />
+
             <section className="media-band media-band--tight">
                 <div className="media-band__bleed">
                     <VideoFeature

@@ -29,9 +29,14 @@ const navItems = [
         matchers: [siteRoutes.speaking, "/speaking"],
     },
     {
-        label: "Downloads",
-        href: siteRoutes.resources,
-        matchers: [siteRoutes.resources, "/downloads", "/sales-playbooks-resources"],
+        label: "Pricing",
+        href: siteRoutes.pricing,
+        matchers: [siteRoutes.pricing],
+    },
+    {
+        label: "Newsletter",
+        href: siteRoutes.newsletter,
+        matchers: [siteRoutes.newsletter],
     },
 ];
 
@@ -109,7 +114,7 @@ export function Header() {
                 <div className={styles.actions}>
                     <div className={styles.desktopCta}>
                         <ButtonLink href={runDiagnosticCtaHref}>
-                            TAKE THE REVENUE DIAGNOSTIC
+                            RUN FREE DIAGNOSTIC
                         </ButtonLink>
                     </div>
 
@@ -153,7 +158,7 @@ export function Header() {
 
                     <div className={styles.mobileActions}>
                         <ButtonLink href={runDiagnosticCtaHref} fullWidth onClick={closeMenu}>
-                            TAKE THE REVENUE DIAGNOSTIC
+                            RUN FREE DIAGNOSTIC
                         </ButtonLink>
                     </div>
                 </div>

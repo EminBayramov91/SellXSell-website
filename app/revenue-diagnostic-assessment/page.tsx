@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { ButtonLink } from "@/components/button-link";
 import { VideoFeature } from "@/components/video-feature";
 import {
@@ -20,6 +21,45 @@ const outputPromise = [
     "Immediate next steps",
 ];
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+        {
+            "@type": "Question",
+            name: "What is a MEDDIC deal assessment?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "A MEDDIC deal assessment scores a sales opportunity across six dimensions — Metrics, Economic Buyer, Decision Criteria, Decision Process, Identified Pain, and Champion — to determine whether a deal is forecastable or carries hidden risk.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Is the SellXSell diagnostic really free?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. The free diagnostic covers one deal, 13 questions, and returns full executive recommendations. No credit card and no time limit.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Do I need Salesforce to use this?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "No. SellXSell works with any CRM or no CRM at all — Salesforce, HubSpot, Excel, or manual input. No integration required.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "How long does the diagnostic take?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Under 5 minutes for the 13-question free diagnostic. The 24-question paid version takes 8–10 minutes.",
+            },
+        },
+    ],
+};
+
 export const metadata: Metadata = {
     title: "Revenue Diagnostic Assessment",
     description: "Find Out Why Your Pipeline Isn't Converting.",
@@ -28,6 +68,14 @@ export const metadata: Metadata = {
 export default function RevenueDiagnosticAssessmentPage() {
     return (
         <>
+            <Script
+                id="diagnostic-faq-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(faqSchema),
+                }}
+            />
+
             <section className="content-section">
                 <div className="shell shell--narrow">
                     <div className={`section-copy section-copy--hero ${styles.center}`}>

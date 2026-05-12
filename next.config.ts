@@ -1,11 +1,20 @@
 import type { NextConfig } from "next";
 
+const isProduction = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  reactCompiler: isProduction,
   devIndicators: false,
+  experimental: {
+    turbopackFileSystemCacheForDev: false,
+  },
   async redirects() {
     return [
+      {
+        source: "/home",
+        destination: "/",
+        permanent: true,
+      },
       {
         source: "/approach",
         destination: "/revenue-operating-system-method",
@@ -38,22 +47,27 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/downloads",
-        destination: "/revenue-playbooks-and-resources",
+        destination: "/newsletter",
         permanent: true,
       },
       {
         source: "/downloads/:asset",
-        destination: "/revenue-playbooks-and-resources/:asset",
+        destination: "/newsletter",
         permanent: true,
       },
       {
         source: "/downloads/thank-you",
-        destination: "/revenue-playbooks-and-resources/thank-you",
+        destination: "/newsletter",
         permanent: true,
       },
       {
         source: "/sales-playbooks-resources",
-        destination: "/revenue-playbooks-and-resources",
+        destination: "/newsletter",
+        permanent: true,
+      },
+      {
+        source: "/revenue-playbooks-and-resources",
+        destination: "/newsletter",
         permanent: true,
       },
       {
@@ -78,7 +92,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/sales-playbooks-resources/:asset",
-        destination: "/revenue-playbooks-and-resources/:asset",
+        destination: "/newsletter",
         permanent: true,
       },
     ];

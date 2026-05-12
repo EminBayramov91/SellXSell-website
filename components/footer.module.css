@@ -42,6 +42,24 @@
   gap: 8px;
 }
 
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 16px;
+  margin-top: 6px;
+}
+
+.footerNav a {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  transition: color 0.24s ease;
+}
+
+.footerNav a:hover {
+  color: var(--color-accent-strong);
+}
+
 .contactRow {
   display: flex;
   align-items: baseline;
@@ -76,6 +94,10 @@
   .contactBlock {
     justify-items: start;
     text-align: left;
+  }
+
+  .footerNav {
+    justify-content: flex-start;
   }
 
   .contactRow {

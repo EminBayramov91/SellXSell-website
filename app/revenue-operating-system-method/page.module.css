@@ -35,6 +35,6 @@
   margin: 24px auto 0;
 }
 
-.footerAction :global(.button) {
+.footerAction > a {
   width: 100%;
 }

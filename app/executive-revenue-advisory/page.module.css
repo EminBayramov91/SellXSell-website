@@ -15,10 +15,12 @@
 
 .serviceCard,
 .stepCard,
-.outcomeChip {
+.outcomeChip,
+.workWayCard,
+.trustSignal {
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 8px;
   border: 1px solid var(--color-border);
   background:
     linear-gradient(180deg, rgba(17, 21, 34, 0.96), rgba(8, 10, 18, 0.98)),
@@ -28,7 +30,9 @@
 
 .serviceCard::before,
 .stepCard::before,
-.outcomeChip::before {
+.outcomeChip::before,
+.workWayCard::before,
+.trustSignal::before {
   content: "";
   position: absolute;
   inset: 0 0 auto;
@@ -69,15 +73,81 @@
   text-align: center;
 }
 
+.workWays {
+  margin-top: 34px;
+}
+
+.workWays h3 {
+  margin: 0;
+  font-size: clamp(1.4rem, 1.15rem + 1vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.workWaysGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.workWayCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 218px;
+  padding: 20px;
+}
+
+.workWayCard h4 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.workWayCard p {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.58;
+}
+
+.workWayCard > a {
+  width: 100%;
+  margin-top: auto;
+}
+
+.trustSignals {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.trustSignal {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.trustSignal strong {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1;
+}
+
+.trustSignal span {
+  color: var(--color-muted);
+  line-height: 1.45;
+}
+
 .ctaRow {
-  width: min(100%, 620px);
+  width: min(100%, 920px);
   margin-top: 28px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
-.ctaRow :global(.button) {
+.ctaRow > a {
   width: 100%;
 }
 
@@ -97,6 +167,8 @@
 @media (max-width: 767px) {
   .servicesGrid,
   .outcomesStrip,
+  .workWaysGrid,
+  .trustSignals,
   .ctaRow {
     grid-template-columns: 1fr;
   }

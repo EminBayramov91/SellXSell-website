@@ -48,6 +48,10 @@
 .proofItem {
   position: relative;
   overflow: hidden;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 18px;
   border: 1px solid var(--color-border);
   background:
@@ -56,6 +60,7 @@
   box-shadow: var(--shadow-card);
   padding: 18px 20px;
   font-size: 1rem;
+  font-weight: 600;
   line-height: 1.55;
   text-align: center;
 }
@@ -94,7 +99,7 @@
   margin-top: 24px;
 }
 
-.footerAction :global(.button) {
+.footerAction > a {
   width: 100%;
 }
 

@@ -1,10 +1,17 @@
-"use client";
-
 import Image from "next/image";
+import Link from "next/link";
 import { ButtonLink } from "./button-link";
 import { runDiagnosticCtaHref } from "@/lib/public-site-config";
 import { siteMedia } from "@/lib/site-media";
+import { siteRoutes } from "@/lib/site-routes";
 import styles from "./footer.module.css";
+
+const footerLinks = [
+    { label: "Pricing", href: siteRoutes.pricing },
+    { label: "Newsletter", href: siteRoutes.newsletter },
+    { label: "Advisory", href: siteRoutes.services },
+    { label: "App", href: "https://app.sellxsell.com" },
+];
 
 export function Footer() {
     return (
@@ -22,6 +29,13 @@ export function Footer() {
 
                 <div className={styles.contactBlock} aria-label="Contact information">
                     <span className={styles.contactLabel}>Contact</span>
+                    <nav className={styles.footerNav} aria-label="Footer">
+                        {footerLinks.map((item) => (
+                            <Link key={item.href} href={item.href}>
+                                {item.label}
+                            </Link>
+                        ))}
+                    </nav>
                     <div className={styles.contactRows}>
                         <div className={styles.contactRow}>
                             <span className={styles.contactKey}>Phone:</span>
