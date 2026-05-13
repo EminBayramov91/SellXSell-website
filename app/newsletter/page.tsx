@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BeehiivSignup } from "./beehiiv-signup";
 import styles from "./page.module.css";
 
 const issueFormats = [
@@ -32,8 +33,6 @@ const audience = [
     "Anyone whose Q4 has ever closed at 60% of what the pipeline said in September",
 ];
 
-const beehiivEmbedUrl = process.env.NEXT_PUBLIC_BEEHIIV_EMBED_URL?.trim();
-
 export const metadata: Metadata = {
     title: {
         absolute: "The 91% — For the 9% who want the truth",
@@ -61,25 +60,7 @@ export const metadata: Metadata = {
 };
 
 function NewsletterSignup() {
-    if (beehiivEmbedUrl) {
-        return (
-            <iframe
-                src={beehiivEmbedUrl}
-                title="Subscribe to The 91% newsletter"
-                className={styles.embed}
-                loading="lazy"
-            />
-        );
-    }
-
-    return (
-        <div className={styles.fallbackSignup}>
-            <a href="mailto:shelley@sellxsell.com?subject=Subscribe%20me%20to%20The%2091%25">
-                your@email.com
-            </a>
-            <span>Join the 9%</span>
-        </div>
-    );
+    return <BeehiivSignup className={styles.embed} />;
 }
 
 export default function NewsletterPage() {
