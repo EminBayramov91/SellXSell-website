@@ -2,7 +2,7 @@ import { siteRoutes } from "@/lib/site-routes";
 
 const calendlyBookingUrl = "https://calendly.com/sellxsellrev/new-meeting";
 const pressureTestBookingUrl = calendlyBookingUrl;
-const diagnosticAppUrl = "https://sell-x-sell.vercel.app/";
+const diagnosticAppUrl = "https://app.sellxsell.com/";
 
 const readPublicEnv = (name: string) => {
     const value = process.env[name]?.trim();

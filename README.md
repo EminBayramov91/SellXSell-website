@@ -51,7 +51,7 @@ Copy `.env.example` to `.env.local` and fill in the client values when they arri
 - `NEXT_PUBLIC_SELLXSELL_PAID_DIAGNOSTIC_URL`
 
 These values control the live CTA destinations for advisory, speaking, the diagnostic app, the thank-you page, and the header/footer CTA.
-Right now advisory + book-diagnostic CTAs fall back to `https://calendly.com/sellxsellrev`, while run-diagnostic CTAs fall back to `https://sell-x-sell.vercel.app/`.
+Right now advisory + book-diagnostic CTAs fall back to `https://calendly.com/sellxsellrev`, while run-diagnostic CTAs fall back to the branded app URL.
 
 ### Mailchimp download gate
 

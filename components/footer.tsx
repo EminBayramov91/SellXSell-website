@@ -56,7 +56,7 @@ export function Footer() {
                 </div>
 
                 <ButtonLink href={runDiagnosticCtaHref}>
-                    TAKE THE REVENUE DIAGNOSTIC
+                    RUN THE DEAL TRUTH ENGINE
                 </ButtonLink>
             </div>
         </footer>

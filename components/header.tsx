@@ -114,7 +114,7 @@ export function Header() {
                 <div className={styles.actions}>
                     <div className={styles.desktopCta}>
                         <ButtonLink href={runDiagnosticCtaHref}>
-                            RUN FREE DIAGNOSTIC
+                            RUN THE DEAL TRUTH ENGINE
                         </ButtonLink>
                     </div>
 
@@ -158,7 +158,7 @@ export function Header() {
 
                     <div className={styles.mobileActions}>
                         <ButtonLink href={runDiagnosticCtaHref} fullWidth onClick={closeMenu}>
-                            RUN FREE DIAGNOSTIC
+                            RUN THE DEAL TRUTH ENGINE
                         </ButtonLink>
                     </div>
                 </div>
